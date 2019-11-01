@@ -5,7 +5,7 @@ const chokidar = require('chokidar');
 
 module.exports = {
   entry: {
-    main: ["./src/main.js"]
+    main: ["./src/assets/main.js"]
   },
   mode: "development",
   output: {
@@ -71,7 +71,7 @@ module.exports = {
 
     new webpack.HotModuleReplacementPlugin(),
     new HTMLWebpackPlugin({
-      template: "./src/index.pug",
+      template: "./src/assets/index.pug",
       filename: "home.html"
     })
   ]
