@@ -5,12 +5,12 @@ const chokidar = require('chokidar');
 
 module.exports = {
   entry: {
-    main: ["./src/assets/main.js"]
+    main: ["./src/main.js"]
   },
   mode: "development",
   output: {
     filename: "[name]-bundle.js",
-    path: path.resolve(__dirname, "../src/server/dist"),
+    path: path.resolve(__dirname, "../dist"),
     publicPath: "/"
   },
   devServer: {
@@ -71,7 +71,7 @@ module.exports = {
 
     new webpack.HotModuleReplacementPlugin(),
     new HTMLWebpackPlugin({
-      template: "./src/assets/index.pug",
+      template: "./src/templates/index.pug",
       filename: "home.html"
     })
   ]
