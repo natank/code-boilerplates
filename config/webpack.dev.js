@@ -1,8 +1,10 @@
 const path = require("path");
 const webpack = require("webpack");
 const HTMLWebpackPlugin = require("html-webpack-plugin")
-const chokidar = require('chokidar');
+const fs = require('fs');
 
+const params = fs.readFileSync(path.resolve(__dirname, '../src/templates/params.json'));
+const jparams = JSON.parse(params)
 module.exports = {
   entry: {
     main: ["./src/main.js"]
@@ -72,7 +74,8 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HTMLWebpackPlugin({
       template: "./src/templates/index.pug",
-      filename: "home.html"
+      filename: "home.html",
+      templateParameters: jparams
     })
   ]
 }
