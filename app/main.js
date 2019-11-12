@@ -1,2 +1,4 @@
 require("@babel/register");
-require("./express");
+setTimeout(() => {
+  require("./express");
+}, 3000)

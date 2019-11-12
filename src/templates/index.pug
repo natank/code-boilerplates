@@ -4,7 +4,14 @@ html
     title
       = title
     body
+      h1.title Hero's Pageee
+      form(action="/update-name" method="post").frm_name
+        h2 Enter Your Name:
+        input(type="text", name="name")
+        <br>
+        input(type="submit" value="submit")
+
       .profile
-        img(src=require("../images/link.jpg"), alt="sdads")
+        img(src=require("../images/link.jpg"), alt="sdas")
         h1 
-          != 'Hello '+name
+          != 'Helloo '+name

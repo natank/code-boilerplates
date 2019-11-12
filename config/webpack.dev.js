@@ -3,8 +3,13 @@ const webpack = require("webpack");
 const HTMLWebpackPlugin = require("html-webpack-plugin")
 const fs = require('fs');
 
-const params = fs.readFileSync(path.resolve(__dirname, '../src/templates/params.json'));
-const jparams = JSON.parse(params)
+const getParams = () => {
+  const params = fs.readFileSync(path.resolve(__dirname, '../params.json'));
+  console.log(`parmas1: ${params}`)
+  const jparams = JSON.parse(params)
+  return jparams
+}
+
 module.exports = {
   entry: {
     main: ["./src/main.js"]
@@ -75,7 +80,11 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: "./src/templates/index.pug",
       filename: "home.html",
-      templateParameters: jparams
+      templateParameters: getParams()
+    }),
+    new HTMLWebpackPlugin({
+      template: "./src/templates/temp.pug",
+      filename: "temp.html"
     })
   ]
 }

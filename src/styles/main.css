@@ -1,9 +1,10 @@
 body {
   margin: 0;
-  background-color: rgb(182, 27, 27);
+  font-family: sans-serif;
 }
 
 .profile {
+  background-color: rgb(182, 27, 27);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,9 +18,23 @@ img {
   box-shadow: 0 0 20px black;
 }
 
-h1 {
+.profile h1 {
   color: white;
   font-size: 5em;
-  font-family: sans-serif;
   text-shadow: 0 0 20px black;
+}
+
+.frm_name {
+  width: 30%;
+  margin: auto;
+  text-align: center;
+  border: solid 1px black;
+  margin-bottom: 1rem;
+}
+
+.frm_name input {
+  margin-bottom: 1rem;
+}
+.title {
+  text-align: center;
 }
